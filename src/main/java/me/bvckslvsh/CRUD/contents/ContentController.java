@@ -22,4 +22,14 @@ public class ContentController {
         contentService.add(content);
     }
 
+    @DeleteMapping(path = "item/{Id}")
+    public void delete(@PathVariable Long Id) {
+        contentService.delete(Id);
+    }
+
+    @PutMapping(path = "item")
+    public void update(@RequestBody Content content) {
+        contentService.update(content);
+    }
+
 }
