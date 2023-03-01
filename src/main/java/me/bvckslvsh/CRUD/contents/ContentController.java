@@ -7,27 +7,27 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("api/contents")
+@RequestMapping("api")
 public class ContentController {
 
     private final ContentService contentService;
 
-    @GetMapping(path = "list")
+    @GetMapping(path = "contents")
     public List<Content> list() {
         return contentService.list();
     }
 
-    @PostMapping(path = "item")
+    @PostMapping(path = "contents/item")
     public void add(@RequestBody Content content) {
         contentService.add(content);
     }
 
-    @DeleteMapping(path = "item/{Id}")
+    @DeleteMapping(path = "contents/item/{Id}")
     public void delete(@PathVariable Long Id) {
         contentService.delete(Id);
     }
 
-    @PutMapping(path = "item")
+    @PutMapping(path = "contents/item")
     public void update(@RequestBody Content content) {
         contentService.update(content);
     }
